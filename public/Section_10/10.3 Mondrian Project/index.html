@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mondrian Project</title>
+    <style>
+      /* 
+    Write your CSS here 
+    Gap Colour: #000
+    White: #F0F1EC
+    Red: #E72F24
+    Black: #232629
+    Blue: #004592
+    Yellow: #F9D01E
+
+    For dimensions, see dimensions.png image.
+    HINT: Remember you can't change the properties of grid lines.
+    But grid lines are transparent!
+    */
+
+      /* 4 columns 4 rows */
+      .container {
+        display: grid;
+        grid-template-columns: repeat(1000, 1px);
+        grid-template-rows: repeat(1000, 1px);
+      }
+
+      .white {
+        background-color: #f0f1ec;
+      }
+
+      .red {
+        background-color: #e72f24;
+      }
+
+      .black {
+        background-color: #232629;
+      }
+
+      .blue {
+        background-color: #004592;
+      }
+
+      .yellow {
+        background-color: #f9d01e;
+      }
+
+      .blacker {
+        background-color: black;
+      }
+
+      .C1R1 {
+        grid-area: 1 / 1 / 414 / 320;
+      }
+
+      .C2-4R1 {
+        grid-area: 1 / 329 / 414 / 748;
+      }
+
+      .C1R2-3 {
+        grid-area: 423 / 1 / 719 / 320;
+      }
+
+      .C2-3R2-3 {
+        grid-area: 423 / 329 / 719 / 689;
+      }
+
+      .C4R2 {
+        grid-area: 423 / 698 / 553 / 748;
+      }
+
+      .C4R3-4 {
+        grid-area: 563 / 698 / 748 / 748;
+      }
+
+      .C1R4 {
+        grid-area: 728 / 1 / 748 / 320;
+      }
+
+      .C2R4 {
+        grid-area: 728 / 329 / 748 / 527;
+      }
+
+      .C3R4 {
+        grid-area: 728 / 536 / 748 / 689;
+      }
+
+      .border1 {
+        grid-area: 1 / 320 / 748 / 329;
+      }
+
+      .border2 {
+        grid-area: 414 / 1 / 423 / 748;
+      }
+
+      .border3 {
+        grid-area: 719 / 1 / 728 / 698;
+      }
+
+      .border4 {
+        grid-area: 414 / 689 / 748 / 698;
+      }
+
+      .border5 {
+        grid-area: 719 / 527 / 748 / 536;
+      }
+
+      .border6 {
+        grid-area: 553 / 689 / 565 / 748;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Write your HTML here -->
+    <div class="container">
+      <div class="red C1R1"></div>
+      <div class="white C2-4R1"></div>
+      <div class="white C1R2-3"></div>
+      <div class="white C2-3R2-3"></div>
+      <dive class="blue C4R2"></dive>
+      <div class="white C4R3-4"></div>
+      <div class="white C1R4"></div>
+      <div class="yellow C2R4"></div>
+      <div class="black C3R4"></div>
+      <div class="blacker border1"></div>
+      <div class="blacker border2"></div>
+      <div class="blacker border3"></div>
+      <div class="blacker border4"></div>
+      <div class="blacker border5"></div>
+      <div class="blacker border6"></div>
+    </div>
+  </body>
+</html>
