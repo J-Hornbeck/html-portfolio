@@ -9,6 +9,13 @@ $("body").on("keydown", function () {
   }
 });
 
+$(".play").on("click", function () {
+  if (gamePattern.length == 0) {
+    nextSequence();
+    $(".play").hide();
+  }
+});
+
 $(".btn").on("click", function (e) {
   var userChosenColor = e.currentTarget.id;
   playSound(userChosenColor);
@@ -73,4 +80,5 @@ function startOver() {
   level = 0;
   gamePattern = [];
   userClickedPattern = [];
+  $(".play").toggle();
 }
