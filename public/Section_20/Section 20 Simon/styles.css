@@ -53,6 +53,8 @@ body {
 }
 
 .play {
+  height: 20vh;
+  width: 20vh;
   background: linear-gradient(
     0deg,
     rgba(255, 151, 0, 1) 0%,
