@@ -6,6 +6,7 @@ var level = 0;
 $("body").on("keydown", function () {
   if (gamePattern.length == 0) {
     nextSequence();
+    $(".play").hide();
   }
 });
 
@@ -18,13 +19,10 @@ $(".play").on("click", function () {
 
 $(".btn").on("click", function (e) {
   var userChosenColor = e.currentTarget.id;
+  userClickedPattern.push(userChosenColor);
   playSound(userChosenColor);
   animatePress(userChosenColor);
-  userClickedPattern.push(userChosenColor);
   checkAnswer(userClickedPattern.length - 1);
-  console.log(userChosenColor);
-  console.log("Current Pattern is = " + userClickedPattern);
-  console.log("Current game Pattern is = " + gamePattern);
 });
 
 function checkAnswer(currentLevel) {
@@ -52,7 +50,7 @@ function checkAnswer(currentLevel) {
 function nextSequence() {
   userClickedPattern = [];
   level++;
-  $("h1").text("Level " + level);
+  $("h1").text(`Level ${level}`);
   var randomNumber = Math.floor(Math.random() * 4);
   gamePattern.push(buttonColors[randomNumber]);
   playSound(gamePattern[gamePattern.length - 1]);
@@ -62,17 +60,15 @@ function nextSequence() {
 }
 
 function playSound(e) {
-  new Audio("./sounds/" + e + ".mp3").play();
+  new Audio(`./sounds/${e}.mp3`).play();
 }
 
 function animatePress(e) {
-  $("#" + e)
+  $(`#${e}`)
     .addClass("pressed")
     .delay(100)
     .queue(function () {
-      $("#" + e)
-        .removeClass("pressed")
-        .dequeue();
+      $(`#${e}`).removeClass("pressed").dequeue();
     });
 }
 
